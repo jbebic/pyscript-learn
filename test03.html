@@ -1,0 +1,98 @@
+<!-- {% load static %} -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>sysPlan</title>
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.ico"/>
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/Footer-Basic-icons.css">
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="row align-items-baseline mb-3">
+                    <div class="col-1 d-md-flex"><a class="align-items-md-center" href="http://achillearesearch.com"><img src="assets/LogoPg6.png" width="100%" style="min-width: 40px;"></a></div>
+                    <div class="col">
+                        <nav class="navbar navbar-light navbar-expand-md">
+                            <div class="container-fluid">
+                                <a class="navbar-brand align-text-bottom" href="{% url 'index' %}">SysPlan</a>
+                                <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2">
+                                    <span class="visually-hidden">Toggle navigation</span>
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navcol-2">    
+                                    <ul class="navbar-nav d-md-flex ms-auto align-items-md-center align-items-lg-center">
+                                        <li class="nav-item"></li>
+                                        <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" role='button' aria-expanded="false" data-bs-toggle="dropdown">Systems</a>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="{% url 'viewexisting' %}">View Existing</a>
+                                                <a class="dropdown-item" href="{% url 'upload' %}">Update/Add New</a>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown">Analysis</a>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="{% url 'index' %}">Add N-0 Solution Set</a>
+                                                <a class="dropdown-item" href="{% url 'index' %}">Define Analyses</a>
+                                                <a class="dropdown-item" href="{% url 'index' %}">Run Analysis</a>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown">Results</a>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="{% url 'index' %}">Risk Charts</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col">
+                        <section class="newsletter-subscribe py-4 py-xl-5">
+                            <div class="container">
+                                <div class="row mb-2">
+                                    <div>
+                                        <input type="file" id="file_input" accept=".csv,text/*">
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn btn-primary mt-3" onclick="ProcessFile()">Process</button>
+                                    </div>
+                                    <div>
+                                        <p id="fileContents"></p>
+                                    </div>
+                                    <div id="display-write"></div>
+                                    <div id="graph-area"></div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <footer class="text-center">
+                            <div class="container text-muted py-4 py-lg-5">
+                                <p class="mb-0">Copyright © 2023 Achillea Research, Inc.</p>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/bootstrap.min.js"></script>
+    <script src="assets/jquery-3.6.0.min.js"></script>
+    <script src="test03.js"></script>
+    <py-config src="./test03.toml"></py-config>
+    <py-script src="./test03.py"></py-script>
+</body>
+</html>
+
